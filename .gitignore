@@ -1,2 +1,22 @@
 # Python bytecode
 *.pyc
+./__pycache__/
+./occ-venv/
+./output/
+.ipynb_checkpoints
+.vscode/
+.DS_Store
+*.log
+.env
+*.tmp
+*.swp
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+.eggs/
+*.spec
+.pytest_cache/
+nosetests.xml
+coverage.xml

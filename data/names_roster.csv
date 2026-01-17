@@ -1,57 +1,82 @@
-role                 , name                  , email                       , username
-President            , Ian Lansdowne         , ianl@tamu.edu               , ian118
-External VP          , Yousuf Shafiu         , yousufs@tamu.edu            , fusuoy
-Internal VP          , Ian Wilhite           , ian.wilhite0@tamu.edu       , en._.ig
-Project VP           , Sam Woravka           , sworavka@tamu.edu           , sworav
-Development VP       , Kalen Jaroszewski     , jaroszewskik@tamu.edu       , pleaseban
-PR Officer           , Isaac Cabello         , isaac.cabello@tamu.edu      , chicknwing01
-Corporate Relations  , James Lee             , jlee915@tamu.edu            , jazard6929
-Webmaster            , Saksham Mohan         , saksham.mohan@tamu.edu      , cla5sic
-Treasurer            , Raquel Garcia         , raquelgarcia@tamu.edu       , dwaynethewock
-Finance Officer      , Eddy Silva            , esilva@tamu.edu             , .halfnote
-Logistics            , Ryo Kato              , ryokato@tamu.edu            , thethingthatshows
-Hatchling Director   , Alejandro Avila       , alejandro.avila022@tamu.edu , alejandro05710
-Hatchling Director   , Ethan Real            , ethanreal05@tamu.edu        , ethan_real05
-Hatchling Director   , Gael Mamenta          , gmamenta@tamu.edu           , gayle_
-Hatchling Director   , Karthik Jayakumar     , karthikjayakumar@tamu.edu   , kjbossman
-Hatchling Director   , McKenzie McCain       , kemping01@tamu.edu          , kemping01
-Hatchling Director   , Mohid Ismail          , mohidismail@tamu.edu        , bean.man.
-Hatchling Director   , Nathan Mersino        , nathanmersino@tamu.edu      , nathanmersino
-Hatchling Director   , Thomas Lopez          , thomaslopez@tamu.edu        , senorsombero
-Hatchling Director   , William Shan          , williamthepig1@tamu.edu     , williamthepig1
-Project Lead         , Aarathi Devakumar     , aarathi_devakumar13@tamu.edu, swiftieartichoke
-Project Lead         , Aidan Briggs          , aidanbriggs@tamu.edu        , ajbscout
-Project Lead         , Anirudh Subramanian   , asubramanian@tamu.edu       , anirudh5580
-Project Lead         , Bennett Moorman       , btmoorman04@tamu.edu        , joseph_smith666
-Project Lead         , Dalys Guajardo        , dalys@tamu.edu              , dalys.
-Project Lead         , David Boosi           , djb2005@tamu.edu            , ____________________________6691
-Project Lead         , Dharmik Patel         , dharmik.p45@tamu.edu        , .dmik
-Project Lead         , Emiliano Grajales-Mora, j_grajalesmora@tamu.edu     , emigra
-Project Lead         , Ethan Guerrero        , ethanjg2814@tamu.edu        , plaguecheems
-Project Lead         , Jack Bluethmann       , j.bluethmann1@tamu.edu      , hamburger_land
-Project Lead         , Jacob Fuerst          , jacob1st@tamu.edu           , jacob418
-Project Lead         , Jonathon Foltyn       , jonathonfoltyn@tamu.edu     , thisperson
-Project Lead         , Jordan Durst          , jordandurst@tamu.edu        , steel0262
-Project Lead         , Kian Dunkin           , kian.dunkin@tamu.edu        , cayenne__
-Project Lead         , Lorenzo Hidalgo       , lhidalgo@tamu.edu           , darthzo
-Project Lead         , Vedant Soni           , ved.soni@tamu.edu           , yddadev
-Lab Quality Officer  , Haider Mahdi          , haidermahd12006@tamu.edu    , darksilence1945
-Documentation Officer, Emily Tredemeyer      , entred@tamu.edu             , entred_52122
-Design Review Officer, Evan Chan             , chanevan10@tamu.edu         , vanelegend
-Design Review Officer, Micah Guttman         , micahguttman@tamu.edu       , memtech3
-Design Review Officer, Will McGarity         , wmcgarity777@tamu.edu       , moneyiscool5
-Sponsorship Committee, Julia Sopala          , jusopala18@tamu.edu         , juli.a9847
-Sponsorship Committee, Preston Nguyen        , prestonnguyen@tamu.edu      , prestonnguyen
-PR Committee         , Alexis Bunta          , alexisbun17@tamu.edu        , bluepanda8800
-PR Committee         , Noah Sherman          , noah.sherman@tamu.edu       , noah_04_80354
-PR Committee         , Renee Zhu             , kito4206@tamu.edu           , aerynix
-Web Dev. Committee   , Jackson Marshall      ,                             , judechungus
-Lab Quality Committee, Caleb Santiago        , caleb_santiago@tamu.edu     , caleb_santiago_80964
-Lab Quality Committee, Dalys Guajardo        , dalys@tamu.edu              , dalys.
-Lab Quality Committee, Mya Tinsay            , myatinsay@tamu.edu          , mykoletoy
-Lil Fuckin Bitch     , Dustin McAdory        , dmackers                    , dusty
-Human Resources      , Justin [idk last name], meen-hr@tamu.edu            , meen-hr
-Organization Mascot  , Turtle Turtleson      , turtle@tamu.edu             , turtle
-Court Jester         , Jonnyathon            , turtle@tamu.edu             , turtle2
-Mr. Steal Yo Girl    , Yousuf Shafiu         , asdf                        , asdf2
-Development VP       , Kalen Jarosasdgqy     , jaroszewskik@tamu.edu       , pleaserban
+role                           , name                  , email                       , username
+# FALL 2025 ROSTER:
+President                      , Sam Woravka           , sworavka@tamu.edu           , sworav2
+President                      , Samantha Woravka      , sworavka@tamu.edu           , samworav2
+President                      , Ian Lansdowne         , ianl@tamu.edu               , ian118
+External VP                    , Yousuf Shafiu         , yousufs@tamu.edu            , fusuoy
+Internal VP                    , Ian Wilhite           , ian.wilhite0@tamu.edu       , en._.ig
+Project VP                     , Sam Woravka           , sworavka@tamu.edu           , sworav
+Development VP                 , Kalen Jaroszewski     , jaroszewskik@tamu.edu       , pleaseban
+PR Officer                     , Isaac Cabello         , isaac.cabello@tamu.edu      , chicknwing01
+Corporate Relations            , James Lee             , jlee915@tamu.edu            , jazard6929
+Webmaster                      , Saksham Mohan         , saksham.mohan@tamu.edu      , cla5sic
+Treasurer                      , Raquel Garcia         , raquelgarcia@tamu.edu       , dwaynethewock
+Finance Officer                , Eddy Silva            , esilva@tamu.edu             , .halfnote
+Logistics                      , Ryo Kato              , ryokato@tamu.edu            , thethingthatshows
+Hatchling Director             , Alejandro Avila       , alejandro.avila022@tamu.edu , alejandro05710
+Hatchling Director             , Ethan Real            , ethanreal05@tamu.edu        , ethan_real05
+Hatchling Director             , Gael Mamenta          , gmamenta@tamu.edu           , gayle_
+Hatchling Director             , Karthik Jayakumar     , karthikjayakumar@tamu.edu   , kjbossman
+Hatchling Director             , McKenzie McCain       , kemping01@tamu.edu          , kemping01
+Hatchling Director             , Mohid Ismail          , mohidismail@tamu.edu        , bean.man.
+Hatchling Director             , Nathan Mersino        , nathanmersino@tamu.edu      , nathanmersino
+Hatchling Director             , Thomas Lopez          , thomaslopez@tamu.edu        , senorsombero
+Hatchling Director             , William Shan          , williamthepig1@tamu.edu     , williamthepig1
+Project Lead                   , Aarathi Devakumar     , aarathi_devakumar13@tamu.edu, swiftieartichoke
+Project Lead                   , Aidan Briggs          , aidanbriggs@tamu.edu        , ajbscout
+Project Lead                   , Anirudh Subramanian   , asubramanian@tamu.edu       , anirudh5580
+Project Lead                   , Bennett Moorman       , btmoorman04@tamu.edu        , joseph_smith666
+Project Lead                   , Dalys Guajardo        , dalys@tamu.edu              , dalys.
+Project Lead                   , David Boosi           , djb2005@tamu.edu            , ____________________________6691
+Project Lead                   , Dharmik Patel         , dharmik.p45@tamu.edu        , .dmik
+Project Lead                   , Emiliano Grajales-Mora, j_grajalesmora@tamu.edu     , emigra
+Project Lead                   , Ethan Guerrero        , ethanjg2814@tamu.edu        , plaguecheems
+Project Lead                   , Jack Bluethmann       , j.bluethmann1@tamu.edu      , hamburger_land
+Project Lead                   , Jacob Fuerst          , jacob1st@tamu.edu           , jacob418
+Project Lead                   , Jonathon Foltyn       , jonathonfoltyn@tamu.edu     , thisperson
+Project Lead                   , Jordan Durst          , jordandurst@tamu.edu        , steel0262
+Project Lead                   , Kian Dunkin           , kian.dunkin@tamu.edu        , cayenne__
+Project Lead                   , Lorenzo Hidalgo       , lhidalgo@tamu.edu           , darthzo
+Project Lead                   , Vedant Soni           , ved.soni@tamu.edu           , yddadev
+Project Lead                   , Anagha Dharmavaram    , aasdf@tamu.edu              , Anaghad
+Lab Quality Officer            , Haider Mahdi          , haidermahd12006@tamu.edu    , darksilence1945
+Documentation Officer          , Emily Tredemeyer      , entred@tamu.edu             , entred_52122
+Design Review Officer          , Evan Chan             , chanevan10@tamu.edu         , vanelegend
+Design Review Officer          , Micah Guttman         , micahguttman@tamu.edu       , memtech3
+Design Review Officer          , Will McGarity         , wmcgarity777@tamu.edu       , moneyiscool5
+Sponsorship Committee          , Julia Sopala          , jusopala18@tamu.edu         , juli.a9847
+Sponsorship Committee          , Preston Nguyen        , prestonnguyen@tamu.edu      , prestonnguyen
+PR Committee                   , Alexis Bunta          , alexisbun17@tamu.edu        , bluepanda8800
+PR Committee                   , Noah Sherman          , noah.sherman@tamu.edu       , noah_04_80354
+PR Committee                   , Renee Zhu             , kito4206@tamu.edu           , aerynix
+Web Dev. Committee             , Jackson Marshall      ,                             , judechungus
+Lab Quality Committee          , Caleb Santiago        , caleb_santiago@tamu.edu     , caleb_santiago_80964
+Lab Quality Committee          , Dalys Guajardo        , dalys@tamu.edu              , dalys.
+Lab Quality Committee          , Mya Tinsay            , myatinsay@tamu.edu          , mykoletoy
+
+# FUNNY ONES:
+Development VP                 , Kalen Jarosasdgqy     , jaroszewskik@tamu.edu       , pleaserban
+Lil Fuckin Bitch               , Dustin McAdory        , dmackers                    , dusty
+Human Resources                , Justin [idk last name], meen-hr@tamu.edu            , meen-hr
+Organization Mascot            , Turtle Turtleson      , turtle@tamu.edu             , turtle
+Court Jester                   , Jonnyathon            , turtle@tamu.edu             , turtle2
+Mr. Steal Yo Girl              , Yousuf Shafiu         , asdf                        , asdf2
+Internal VP                    , I[2]                  , ian.wilhite0@tamu.edu       , i2
+
+# Corrections/Reprints/Updates:
+Faculty Advisor                , Sivakumar Rathinam    , srathinam@tamu.edu          , rathinam
+Project Lead                   , Will McGarity         , wmcgarity777@tamu.edu       , willm
+Project VP                     , Emily Tredemeyer      , entred@tamu.edu             , etred
+Documentation Officer          , Ryo Kato              , ryokato@tamu.edu            , ryo2
+Corporate Relations Officer    , William Donaldson     , will                        , willd
+Events Officer                 , Renee Zhu             , rene                        , arsenix
+Hatchling Director             , Drew Wheaton          , dreww                       , dreww
+Hatchling Director             , Julia Sopala          , julias                      , julias
+Project Lead                   , James Lee             , jlee915@tamu.edu            , jazard69
+Project Lead                   , Raquel Garcia         , raquelgarcia@tamu.edu       , dwaynethewock
+Design Review Co-Chair         , Evan Chan             , chanevan10@tamu.edu         , evan2
+Design Review Co-Chair         , Will McGarity         , wmcgarity777@tamu.edu       , willm3
+Project Lead                   , Ethan Guerrero        , ethanjg2814@tamu.edu        , plaguecheems
+Sr. Vibe Coder                 , Saksham Mohan         , turtlerobotics@gmail.com    , mohaned
+Sponsorship Committee          , Om Bhatt              , om.bhatt@tamu.edu           , om_bhatt2
+Design Review Committee        , Om Bhatt              , om.bhatt@tamu.edu           , om_bhatt3
