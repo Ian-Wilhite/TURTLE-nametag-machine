@@ -14,6 +14,7 @@ Generate multi-material nametags from a CSV roster using OpenSCAD (STL).
 - OpenSCAD 2021+ (CLI available as `openscad`)
 - Python 3.9+ (standard library only for STL generation)
 - Bash (for the batch helper)
+- Optional for STEP export: `pythonocc-core` installed in `occ-venv` (used by the pipeline)
 
 ## Input CSV
  - `data/names_roster.csv` needs headers and one person per line:
@@ -32,6 +33,15 @@ python3 scripts/generate_nametag_stls.py
 ```
 - Outputs to `output/<id>_backing.stl`, `_text.stl`, `_logo.stl`.
 - Existing files are skipped to avoid re-rendering.
+
+## Full pipeline (STL + STEP)
+From the repo root:
+```bash
+./scripts/run_pipeline.sh
+```
+- Activates `occ-venv`, generates STLs from the roster, then converts them to STEP (writes to `steps/`) when `pythonocc-core` is present.
+- If no STLs are produced (e.g., empty CSV or missing name/role), the script exits before STEP conversion.
+- To enable STEP output, install `pythonocc-core` into the venv: `source occ-venv/bin/activate && pip install pythonocc-core`.
 
 
 ## Slicer usage

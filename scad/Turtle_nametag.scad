@@ -24,14 +24,24 @@ name_size_max      = 4;     // mm
 position_size_max  = 2.75;      // mm
 org_size_max       = 3.5;     // mm
 
-text_depth      = 0.7;
+text_depth      = 0.6;
 font_name       = "Liberation Sans:style=Bold";
 
 ///////////////////////////////
 // Logo Position Parameters
 ///////////////////////////////
-logo_center_x   = 16;
-logo_center_y   = 11.5;
+logo_center_x   = 43.5;
+logo_center_y   = 19.5;
+logo_svg_width  = 1136;   // native SVG width
+logo_svg_height = 1144;   // native SVG height
+logo_scale      = 0.045; // tuned so logo fits the 20 mm logo area
+
+// Back pocket cutout (on backside)
+pocket_len   = 45;  // mm (X)
+pocket_wid   = 13;  // mm (Y)
+pocket_depth = 2;   // mm (Z)
+pocket_center = [0, 0]; // x,y center of the pocket (edit as needed)
+fillet_r = 1.2; // mm
 
 ///////////////////////////////
 // Auto text sizing helpers
@@ -61,17 +71,17 @@ function right_center_x() = (plate_length/2 - right_width/2);
 function name_text_pos() =
     [ left_center_x(),
       plate_height/2 - top_margin*5/4 - name_size,
-      plate_thickness ];
+      0 ];
 
 function position_text_pos() =
     [ left_center_x(),
       -6,
-      plate_thickness ];
+      0 ];
 
 function org_text_pos() =
     [ right_center_x() - 3,
-     -plate_height/2 + bottom_margin + org_size/2,
-      plate_thickness ];
+     -plate_height/2 + 0.85 * bottom_margin + org_size/2,
+      0 ];
 
 ///////////////////////////////
 // Geometry modules
@@ -85,33 +95,63 @@ module backing() {
 
 // All text bodies (name + position + org), as one solid
 module all_text() {
-    // Name
-    translate(name_text_pos())
-        linear_extrude(height = text_depth)
-            text(name_text, size=name_size,
-                 halign="center", valign="center", font=font_name);
+    mirror([0, 1, 0]) {
+        // Name
+        translate(name_text_pos())
+            linear_extrude(height = text_depth)
+                text(name_text, size=name_size,
+                     halign="center", valign="center", font=font_name);
 
-    // Position
-    translate(position_text_pos())
-        linear_extrude(height = text_depth)
-            text(position_text, size=position_size,
-                 halign="center", valign="center", font=font_name);
+        // Position
+        translate(position_text_pos())
+            linear_extrude(height = text_depth)
+                text(position_text, size=position_size,
+                     halign="center", valign="center", font=font_name);
 
-    // Org line
-    translate(org_text_pos())
-        linear_extrude(height = text_depth)
-            text(org_text, size=org_size,
-                 halign="center", valign="center", font=font_name);
+        // Org line
+        translate(org_text_pos())
+            linear_extrude(height = text_depth)
+                text(org_text, size=org_size,
+                     halign="center", valign="center", font=font_name);
+    }
 }
 
 // Logo body from STL slice
 module logo_body() {
-    translate([logo_center_x, logo_center_y, plate_thickness])
-        turtle_logo(text_depth);
+    union() {
+        logo_yellow();
+        logo_white();
+    }
 }
 
+
+module rounded_prism_xy(len, wid, ht, r=2) {
+    // Rounds only the XY corners; Z edges remain sharp (a true extruded rounded-rectangle).
+    linear_extrude(height = ht)
+        translate([r, r])
+            offset(r = r)
+                square([len - 2*r, wid - 2*r], center = false);
+}
+
+module back_pocket() {
+    translate([
+        pocket_center[0] - pocket_len/2,
+        pocket_center[1] - pocket_wid/2,
+        plate_thickness - pocket_depth
+    ])
+    rounded_prism_xy(pocket_len, pocket_wid, pocket_depth + 0.01, fillet_r);
+}
 ///////////////////////////////
-// Rounded Rectangle
+// Backing plate with text and logo cavities
+module backing_with_cavities() {
+    difference() {
+        backing();
+        all_text();
+        logo_body();
+        back_pocket();   // <-- add this
+    }
+}
+
 ///////////////////////////////
 module rounded_rect_2d(len, ht, r) {
     minkowski() {
@@ -121,35 +161,47 @@ module rounded_rect_2d(len, ht, r) {
 }
 
 ///////////////////////////////
-// Turtle Logo from STL
+// Turtle Logo from SVG layers
 ///////////////////////////////
-// slice_z lets you choose which Z-height to slice through
-module turtle_logo(height, slice_z = -1) {
-    // tweak scale until logo fits in right_width x plate_height nicely
-    logo_scale = 0.0105;  
+// Common transform for each SVG layer so the logo stays centered and scaled.
+module turtle_logo_layer(svg_path) {
+    mirror([0, 1, 0])
+        translate([logo_center_x, logo_center_y, 0])
+            linear_extrude(height = text_depth)
+                scale(logo_scale)
+                    translate([-logo_svg_width/2, -logo_svg_height/2])
+                        import(svg_path, convexity = 10);
+}
 
-    linear_extrude(height = height)
-        scale(logo_scale)
-            projection(cut = false)
-                translate([0, 0, -slice_z])   // slice at z = slice_z
-                    rotate([90, 0, 0])        // your previous orientation
-                        import("Turtle_logo.STL", convexity = 10);
+module logo_yellow() {
+    color("#edcb24") turtle_logo_layer("assets/color_edcb24.svg");
+}
+
+module logo_white() {
+    color("#f6f6f6") turtle_logo_layer("assets/color_f6f6f6.svg");
 }
 
 ///////////////////////////////
 // Assembly / top-level selection
 ///////////////////////////////
 if (part == "backing") {
-    color("black") backing();
+    color("black") backing_with_cavities();
 }
 else if (part == "text") {
-    color("lightgray") all_text();
+    color("lightgray") union() {
+        all_text();      // name, position, org
+        logo_white();    // white layer of the turtle logo
+    }
 }
 else if (part == "logo") {
-    color("green") logo_body();
+    // Only the yellow portion is exported separately; the white rides with text
+    color("#edcb24") logo_yellow();
 }
 else {  // full assembly for preview
-    color("black") backing();
-    color("lightgray")     all_text();
-    color("green")     logo_body();
+    color("white") backing_with_cavities();
+    color("lightgray") union() {
+        all_text();
+        logo_white();
+    }
+    color("#edcb24") logo_yellow();
 }

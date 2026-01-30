@@ -1,21 +1,21 @@
 #!/usr/bin/env python3
 """
 Convert three aligned STL meshes (backing, text, logo) into a single multi-body STEP file.
-Uses pythonocc-core (OCC) instead of FreeCAD CLI.
+Uses cadquery-ocp for OpenCascade bindings.
 """
 import sys
 import os
 
 try:
-    from OCC.Core.BRep import BRep_Builder
-    from OCC.Core.STEPControl import STEPControl_Writer, STEPControl_AsIs
-    from OCC.Core.StlAPI import StlAPI_Reader
-    from OCC.Core.TopoDS import TopoDS_Compound, TopoDS_Shape
-    from OCC.Core.IFSelect import IFSelect_RetDone
+    from OCP.BRep import BRep_Builder
+    from OCP.STEPControl import STEPControl_Writer, STEPControl_AsIs
+    from OCP.StlAPI import StlAPI_Reader
+    from OCP.TopoDS import TopoDS_Compound, TopoDS_Shape
+    from OCP.IFSelect import IFSelect_RetDone
 except Exception as exc:  # pragma: no cover - import guard
     sys.stderr.write(
-        "Error: pythonocc-core is required for STL→STEP conversion. "
-        "Install with `pip install pythonocc-core`.\n"
+        "Error: cadquery-ocp is required for STL→STEP conversion. "
+        "Install with `pip install cadquery-ocp`.\n"
     )
     sys.exit(1)
 

@@ -1,11 +1,26 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# Convert STL triplets (backing, text, logo) to 3MF files using PrusaSlicer CLI.
+
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 CSV="$REPO_ROOT/data/names_roster.csv"
-STL_SCRIPT="$SCRIPT_DIR/stls_to_step.py"
 OUTDIR="$REPO_ROOT/output"
+
+# Find PrusaSlicer CLI
+PRUSA_CLI=""
+for cmd in prusa-slicer prusaslicer PrusaSlicer prusa-slicer-console; do
+    if command -v "$cmd" &>/dev/null; then
+        PRUSA_CLI="$cmd"
+        break
+    fi
+done
+
+if [[ -z "$PRUSA_CLI" ]]; then
+    echo "Error: PrusaSlicer CLI not found in PATH" >&2
+    exit 1
+fi
 
 # Collect tag IDs using the same rules as generate_nametag_stls.py
 export REPO_ROOT
@@ -41,15 +56,15 @@ for id in "${TAG_IDS[@]}"; do
     backing="$OUTDIR/${id}_backing.stl"
     text="$OUTDIR/${id}_text.stl"
     logo="$OUTDIR/${id}_logo.stl"
-    step="$OUTDIR/${id}.step"
+    output_3mf="$OUTDIR/${id}.3mf"
 
     if [[ ! -f "$backing" || ! -f "$text" || ! -f "$logo" ]]; then
         echo "Skipping $id (missing STL files)"
         continue
     fi
 
-    echo "Converting $id to STEP..."
-    python3 "$STL_SCRIPT" "$id" "$backing" "$text" "$logo" "$step"
+    echo "Converting $id to 3MF..."
+    "$PRUSA_CLI" --merge --dont-arrange --export-3mf -o "$output_3mf" "$backing" "$text" "$logo"
 done
 
-echo "All STEP files generated in $OUTDIR"
+echo "All 3MF files generated in $OUTDIR"
