@@ -2,7 +2,7 @@
 *.pyc
 ./__pycache__/
 ./occ-venv/
-./output/
+./output/*
 .ipynb_checkpoints
 .vscode/
 .DS_Store
