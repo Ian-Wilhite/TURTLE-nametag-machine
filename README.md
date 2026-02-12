@@ -1,6 +1,11 @@
 # TURTLE Nametag Generator
 Generate multi-material nametags from a CSV roster using OpenSCAD.
 
+<p align="center">
+  <img src="assets/20260116_193716.jpg" alt="Array of nametags on build plate" width="45%" />
+  <img src="assets/20260117_110710.jpg" alt="Nametag with logo detail" width="45%" />
+</p>
+
 ## How it works
 The pipeline runs in three stages:
 1. **STL Generation**: Read `data/names_roster.csv` and call OpenSCAD to export three aligned STLs per person: backing, text, and logo.
